@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Fighter from "./Fighter/Fighter";
 import Coach from "./Coach/Coach";
 import GymOwner from "./GymOwner/GymOwner";
+import Promoter from "./Promoter/Promoter";
 
 const UsersOverview = () => {
   return (
@@ -48,6 +49,9 @@ const UsersOverview = () => {
 
       <TabsContent value="Gym Owner">
         <GymOwner/>
+      </TabsContent>
+      <TabsContent value="Promoter">
+        <Promoter/>
       </TabsContent>
     </Tabs>
   );
