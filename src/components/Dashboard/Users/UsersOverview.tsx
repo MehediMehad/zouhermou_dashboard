@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Fighter from "./Fighter/Fighter";
 import Coach from "./Coach/Coach";
+import GymOwner from "./GymOwner/GymOwner";
 
 const UsersOverview = () => {
   return (
@@ -17,16 +18,16 @@ const UsersOverview = () => {
             Athlete (Fighter)
           </TabsTrigger>
           <TabsTrigger
-            value="Gym Owner"
-            className="text-[15px] max-w-[197px] font-semibold border-b-2 border-[#808080] pb-1 text-center text-[#808080] rounded-none px-10"
-          >
-            Gym Owner
-          </TabsTrigger>
-          <TabsTrigger
             value="Coach"
             className="text-[15px] max-w-[197px] font-semibold border-b-2 border-[#808080] pb-1 text-center text-[#808080] rounded-none px-10"
           >
             Coach
+          </TabsTrigger>
+          <TabsTrigger
+            value="Gym Owner"
+            className="text-[15px] max-w-[197px] font-semibold border-b-2 border-[#808080] pb-1 text-center text-[#808080] rounded-none px-10"
+          >
+            Gym Owner
           </TabsTrigger>
           <TabsTrigger
             value="Promoter"
@@ -46,7 +47,7 @@ const UsersOverview = () => {
       </TabsContent>
 
       <TabsContent value="Gym Owner">
-        <Coach/>
+        <GymOwner/>
       </TabsContent>
     </Tabs>
   );

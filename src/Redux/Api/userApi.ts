@@ -48,6 +48,31 @@ const userApi = baseApi.injectEndpoints({
           });
         }
         return {
+          url: "/coaches/get-coaches",
+          method: "GET",
+          params: params,
+        };
+      },
+      providesTags: ["USERS"],
+      transformResponse: (response: TResponseRedux<any[]>) => {
+        console.log({response});
+        
+        return {
+          data: response.data,
+          meta: response.meta,
+        };
+      },
+    }),
+    getAllGymOwner: builder.query({
+      query: (args) => {
+        const params = new URLSearchParams();
+
+        if (args) {
+          args.forEach((item: TQueryParam) => {
+            params.append(item.name, item.value as string);
+          });
+        }
+        return {
           url: "/gym/get-gyms",
           method: "GET",
           params: params,
@@ -103,6 +128,7 @@ export const {
   useGetMeQuery,
   useGetAllFighterQuery,
   useGetAllCoachQuery,
+  useGetAllGymOwnerQuery,
   useGetSingleUsersQuery,
   useGetAdminDetailsQuery,
   useGetTotalQuery
