@@ -38,6 +38,31 @@ const userApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getAllCoach: builder.query({
+      query: (args) => {
+        const params = new URLSearchParams();
+
+        if (args) {
+          args.forEach((item: TQueryParam) => {
+            params.append(item.name, item.value as string);
+          });
+        }
+        return {
+          url: "/gym/get-gyms",
+          method: "GET",
+          params: params,
+        };
+      },
+      providesTags: ["USERS"],
+      transformResponse: (response: TResponseRedux<any[]>) => {
+        console.log({response});
+        
+        return {
+          data: response.data,
+          meta: response.meta,
+        };
+      },
+    }),
     getSingleUsers: builder.query({
       query: (id: string) => ({
         url: `/users/${id}`,
@@ -77,6 +102,7 @@ export const {
   useLoginUserMutation,
   useGetMeQuery,
   useGetAllFighterQuery,
+  useGetAllCoachQuery,
   useGetSingleUsersQuery,
   useGetAdminDetailsQuery,
   useGetTotalQuery
