@@ -9,8 +9,14 @@ import {
 import { LineChart } from "./LineChart";
 import { Badge } from "@/components/ui/badge";
 import { BsArrowUp } from "react-icons/bs";
+import { TDashboardData } from "./DashboardOverview";
+import { Users } from "lucide-react";
 
-const ChartOverview = () => {
+type DashboardCardProps = {
+  dashboardData: TDashboardData;
+};
+
+const ChartOverview = ({ dashboardData }: DashboardCardProps) => {
   return (
     <div className="grid gap-4 max-w-[100%] ">
       <Card className="col-span-4 border-[1px] border-[#74747480] shadow-none rounded-sm">
@@ -21,7 +27,10 @@ const ChartOverview = () => {
             </CardTitle>
             <div className="flex justify-between items-center gap-4 py-3">
               <h3 className="text-4xl font-bold leading-[100%] tracking-[-3%]">
-                $ 4000
+                <div className="flex items-center justify-center gap-x-2">
+                  <Users />
+                  {dashboardData.totalUsers}
+                </div>
               </h3>
               {/*TODO: hidden */}
               <Badge className="bg-[#E9FFEC] text-[#023621] shadow-none border-[1px] border-[#023621] hover:bg-[#E9FFEC] px-1 hidden">
@@ -33,7 +42,7 @@ const ChartOverview = () => {
             </div>
           </div>
           {/*TODO: Button hidden */}
-          <div className="items-center gap-2 hidden"> 
+          <div className="items-center gap-2 hidden">
             <Select defaultValue="month">
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Month" />
@@ -47,7 +56,7 @@ const ChartOverview = () => {
           </div>
         </CardHeader>
         <CardContent className="pl-2">
-          <LineChart />
+          <LineChart stats={dashboardData.stats} />
         </CardContent>
       </Card>
     </div>

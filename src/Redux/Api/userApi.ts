@@ -162,9 +162,9 @@ const userApi = baseApi.injectEndpoints({
         method: "GET",
       }),
     }),
-    getTotal: builder.query({
+    getTotalDetails: builder.query({
       query: () => ({
-        url: "/user/admin",
+        url: "/profile/user-details",
         method: "GET",
       }),
     }),
@@ -182,6 +182,6 @@ export const {
   useGetSingleUsersQuery,
   useGetAllPromoterQuery,
   useGetAdminDetailsQuery,
-  useGetTotalQuery,
+  useGetTotalDetailsQuery,
   useGetAllEventQuery
 } = userApi;

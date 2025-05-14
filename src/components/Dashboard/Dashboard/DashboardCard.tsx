@@ -2,8 +2,15 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { BsArrowUp } from "react-icons/bs";
 import { CiMoneyCheck1 } from "react-icons/ci";
+import { TDashboardData } from "./DashboardOverview";
 
-const DashboardCard = () => {
+type DashboardCardProps = {
+  dashboardData: TDashboardData;
+};
+
+const DashboardCard = ({ dashboardData }: DashboardCardProps) => {
+  console.log(dashboardData);
+  
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
@@ -19,7 +26,7 @@ const DashboardCard = () => {
             </p>
             <div className="flex justify-between items-baseline gap-1">
               <h3 className="text-4xl font-bold leading-[100%] tracking-[-3%]">
-                 500 
+                 {dashboardData?.athletes}
               </h3>
               {/*TODO: hidden */}
               <Badge className="bg-[#E9FFEC] text-[#023621] shadow-none border-[1px] border-[#023621] hover:bg-[#E9FFEC] px-1 hidden">
@@ -45,7 +52,7 @@ const DashboardCard = () => {
             </p>
             <div className="flex justify-between items-baseline gap-1">
               <h3 className="text-4xl font-bold leading-[100%] tracking-[-3%]">
-                500
+                {dashboardData?.athletes}
               </h3>
               {/*TODO: hidden */}
               <Badge className="bg-[#E9FFEC] text-[#023621] shadow-none border-[1px] border-[#023621] hover:bg-[#E9FFEC] px-1 hidden">
@@ -71,7 +78,7 @@ const DashboardCard = () => {
             </p>
             <div className="flex justify-between items-baseline gap-1">
               <h3 className="text-4xl font-bold leading-[100%] tracking-[-3%]">
-                500
+                {dashboardData.gyms}
               </h3>
               {/*TODO: hidden */}
               <Badge className="bg-[#E9FFEC] text-[#023621] shadow-none border-[1px] border-[#023621] hover:bg-[#E9FFEC] px-1 hidden">
@@ -97,7 +104,7 @@ const DashboardCard = () => {
             </p>
             <div className="flex justify-between items-baseline gap-1">
               <h3 className="text-4xl font-bold leading-[100%] tracking-[-3%]">
-                500
+               {dashboardData.promoters}
               </h3>
               {/* <Badge className="bg-[#E9FFEC] text-[#023621] shadow-none border-[1px] border-[#023621] hover:bg-[#E9FFEC] px-1">
                 <span className="pr-[2px]">
