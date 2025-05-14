@@ -7,8 +7,9 @@ import { FiMenu } from "react-icons/fi"; // Menu icon
 import logo from "@/assests/logo.png";
 import { LogoutButton } from "./LogoutButton";
 import { AiOutlineLineChart } from "react-icons/ai";
-import { TbUserStar } from "react-icons/tb";
 import { RiUserStarLine } from "react-icons/ri";
+import { RiCalendarEventFill } from "react-icons/ri";
+
 
 
 interface SidebarProps {
@@ -24,9 +25,9 @@ const navigation = [
   },
   { label: "User Profile", route: "/users", iconPath: <RiUserStarLine size={22} /> },
   {
-    label: "Customer List",
-    route: "/customers",
-    iconPath: <TbUserStar size={22} />,
+    label: "Event Management",
+    route: "/event-management",
+    iconPath: <RiCalendarEventFill size={20} />,
   },
 ];
 

@@ -113,6 +113,31 @@ const userApi = baseApi.injectEndpoints({
         };
       },
     }),
+    getAllEvent: builder.query({
+      query: (args) => {
+        const params = new URLSearchParams();
+
+        if (args) {
+          args.forEach((item: TQueryParam) => {
+            params.append(item.name, item.value as string);
+          });
+        }
+        return {
+          url: "/events/all-events",
+          method: "GET",
+          params: params,
+        };
+      },
+      providesTags: ["USERS"],
+      transformResponse: (response: TResponseRedux<any[]>) => {
+        console.log({response});
+        
+        return {
+          data: response.data,
+          meta: response.meta,
+        };
+      },
+    }),
     getSingleUsers: builder.query({
       query: (id: string) => ({
         url: `/users/${id}`,
@@ -157,5 +182,6 @@ export const {
   useGetSingleUsersQuery,
   useGetAllPromoterQuery,
   useGetAdminDetailsQuery,
-  useGetTotalQuery
+  useGetTotalQuery,
+  useGetAllEventQuery
 } = userApi;

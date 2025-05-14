@@ -16,8 +16,8 @@ const ChartOverview = () => {
       <Card className="col-span-4 border-[1px] border-[#74747480] shadow-none rounded-sm">
         <CardHeader className="flex flex-row items-center justify-between pb-2">
           <div>
-            <CardTitle className="text-[15px] font-semibold border-b-2 border-[#91D160] pb-1 text-center text-[#91D160]">
-              Total Earning
+            <CardTitle className="text-[15px] font-semibold border-b-2 border-[#F80000] pb-1 text-center ">
+              Total Users
             </CardTitle>
             <div className="flex justify-between items-center gap-4 py-3">
               <h3 className="text-4xl font-bold leading-[100%] tracking-[-3%]">

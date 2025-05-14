@@ -9,7 +9,7 @@ export default function GymOwnerTable({
   openPagination: any;
 }) {
   const columns = [
-    { label: "Athlete Name", field: "name" },
+    { label: "Gym Name", field: "name" },
     { label: "Martial Arts", field: "martialArtsGym" },
     { label: "(AVG) Rating", field: "averageRating" },
     { label: "Country", field: "country" },
